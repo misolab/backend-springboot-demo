@@ -34,6 +34,17 @@
         - 커맨드라인: `./gradlew bootRun --args='--spring.profiles.active=프로파일명'`
 
 3. swagger 확인
+    * springdoc-openapi 추가
+    * 접속 주소
+        - Swagger UI: http://localhost:8080/swagger-ui.html
+        - API Docs: http://localhost:8080/api-docs
+    * 설정 항목
+        - SwaggerConfig: API 문서 기본 정보 설정
+        - @Tag: API 그룹 설정
+        - @Operation: API 설명 설정
+    * prod 프로파일
+        - Swagger UI 비활성화
+        - API Docs 비활성화
 
 4. Validation 확인
 
