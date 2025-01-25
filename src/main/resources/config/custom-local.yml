@@ -1,0 +1,3 @@
+# config/custom-local.yml
+config:
+  custom: local

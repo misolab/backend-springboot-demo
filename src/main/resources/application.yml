@@ -1,0 +1,15 @@
+spring:
+  config:
+    import:
+      - classpath:/config/custom.yml
+      - classpath:/config/custom-${spring.profiles.active:local}.yml
+  devtools:
+    restart:
+      enabled: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.example.demo: ERROR
