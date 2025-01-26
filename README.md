@@ -92,6 +92,21 @@
         - format_sql: true (SQL 로그 포맷팅)
 
 7. Flyway 확인
+    * 의존성 추가
+        - flyway-core
+    * 설정
+        - locations: classpath:db/migration
+        - sql-migration-prefix: V
+        - sql-migration-separator: __
+        - sql-migration-suffixes: .sql
+    * 마이그레이션 파일
+        - V1__init.sql: 초기 테이블 생성
+    * 프로파일별 설정
+        - local: clean 허용 (개발용)
+        - prod: clean 비활성화 (운영용)
+    * 실행
+        - 자동 실행: 애플리케이션 시작 시
+        - 수동 실행: ./gradlew flywayMigrate
 
 8. File Upload 확인
 
