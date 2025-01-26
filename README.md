@@ -61,9 +61,13 @@
         - ApiResponse: 공통 응답 형식
     * Swagger UI에서 검증 규칙 확인 가능
 
-5. JPA 확인
+5. PostgreSQL, DB Client 설치
+    * Docker Desktop 설치
+    * Docker Compose 파일 생성, 실행
+        * PostgreSQL 설정
+    * DB Client 설치, 접속
 
-6. H2, PostgreSQL 확인
+6. JPA, H2, PostgreSQL 확인
 
 7. Flyway 확인
 
