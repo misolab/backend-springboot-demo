@@ -1,19 +1,29 @@
+server:
+  port: 8080
+
 spring:
+  # Custom Config Import
   config:
     import:
       - classpath:/config/custom.yml
       - classpath:/config/custom-${spring.profiles.active:local}.yml
+  # Devtools Config
   devtools:
     restart:
       enabled: false
+  # Database Common Config
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
 
-server:
-  port: 8080
 
+# Logging Config
 logging:
   level:
     com.example.demo: ERROR
 
+# Swagger Config
 springdoc:
   swagger-ui:
     path: /swagger-ui.html

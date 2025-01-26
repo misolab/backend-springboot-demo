@@ -68,6 +68,28 @@
     * DB Client 설치, 접속
 
 6. JPA, H2, PostgreSQL 확인
+    * 의존성 추가
+        - spring-boot-starter-data-jpa
+        - h2database
+        - postgresql
+    * 데이터베이스 설정
+        - H2: local 프로파일
+            - 메모리 DB 사용
+            - H2 콘솔: http://localhost:8080/h2-console
+        - PostgreSQL: dev, prod 프로파일
+            - Docker Compose로 실행
+            - 접속 정보:
+                - Host: localhost
+                - Port: 5432
+                - Database: demo
+                - Username: demo_user
+                - Password: demo_pass
+    * JPA 설정
+        - ddl-auto:
+            - local: create-drop (개발용)
+            - dev, prod: validate (운영용)
+        - show-sql: true (SQL 로그 출력)
+        - format_sql: true (SQL 로그 포맷팅)
 
 7. Flyway 확인
 

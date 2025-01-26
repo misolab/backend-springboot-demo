@@ -1,3 +1,20 @@
+spring:
+  # Datasource Config
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/demo
+    username: demo_user
+    password: demo_pass
+  # JPA Config
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+# Logging Config
 logging:
   level:
-    com.example.demo: WARN
+    com.example.demo: INFO
