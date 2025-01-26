@@ -47,6 +47,19 @@
         - API Docs 비활성화
 
 4. Validation 확인
+    * spring-boot-starter-validation 추가
+    * 검증 어노테이션
+        - @NotBlank: 필수 입력값 검증
+        - @Size: 문자열 길이 검증
+        - @Email: 이메일 형식 검증
+        - @Min, @Max: 숫자 범위 검증
+    * Controller에서 검증 활성화
+        - 클래스에 @Validated 추가
+        - 메서드 파라미터에 @Valid 추가
+    * 공통 예외 처리
+        - GlobalExceptionHandler: 전역 예외 처리
+        - ApiResponse: 공통 응답 형식
+    * Swagger UI에서 검증 규칙 확인 가능
 
 5. JPA 확인
 
