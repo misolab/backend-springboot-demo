@@ -44,22 +44,17 @@ public class SampleController {
 
     @Operation(summary = "Hello API", description = "프로파일과 커스텀 설정값을 반환합니다.")
     @GetMapping("/")
-    public ResponseEntity<ApiResponse<Map<String, String>>> hello(@Valid SampleRequest request) {
+    public ResponseEntity<ApiResponse<Map<String, String>>> hello() {
         log.debug("Debug log message");
-        log.info("Info log message - name: {}, email: {}, age: {}",
-                request.getName(), request.getEmail(), request.getAge());
+        log.info("Info log message");
         log.warn("Warn log message");
         log.error("Error log message");
 
         Map<String, String> response = new HashMap<>();
         response.put("profile", activeProfile);
         response.put("custom", customProperties.toString());
-        response.put("message", String.format("Back-end Spring Boot Demo + %s(%s)",
-                request.getName(), request.getEmail()));
+        response.put("message", "Hello, Back-end Spring Boot Demo");
 
-        if (request.getAge() < 18) {
-            return ApiResponse.error(HttpStatus.INTERNAL_SERVER_ERROR, "나이가 18보다 작습니다.", "500");
-        }
         return ApiResponse.success(response);
     }
 

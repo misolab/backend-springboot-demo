@@ -18,3 +18,32 @@ spring:
       # swagger
       - classpath:/config/swagger/common.yml
       - classpath:/config/swagger/${spring.profiles.active}.yml
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: false
+
+
+---
+# dev 프로파일 설정
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+
+---
+# test 프로파일 설정
+spring:
+  config:
+    activate:
+      on-profile: test
+
+
+---
+# prod 프로파일 설정
+spring:
+  config:
+    activate:
+      on-profile: prod

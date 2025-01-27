@@ -2,28 +2,14 @@
 
 ### TODO
 1. devTools 확인
-    * `./gradlew bootRun` 실행 하지말고, IDE에서 실행
-    * Lombok 설정 추가
-        - build.gradle: lombok 의존성 추가
-        - VSCode: lombok 지원 설정 추가
-``` json
-{   // .vscode/settings.json
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.settings.gradle.autoDetect": "on",
-    "editor.formatOnSave": true,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
-    "java.configuration.updateBuildConfiguration": "automatic",
-    "java.jdt.ls.lombokSupport.enabled": true
-}
-```
+    * `./gradlew bootRun` 으로 실행하고, 변경 후 `./gradlew build` 로 빌드&재실행
+    * 툴의 기능을 사용하다보니, 빌드 후 재실행 시 변경 내용이 반영되지 않는 문제 발생
+
 2. profile 확인
     * local, dev, prod 프로파일 설정 완료
     * 프로파일별 설정 파일 분리:
         - application.yml (기본 설정)
-        - application-local.yml
-        - application-dev.yml
-        - application-prod.yml
+            - on-profile 에 분리 
     * 커스텀 설정 파일 분리 (/config 폴더):
         - custom.yml (기본 설정)
         - custom-local.yml
