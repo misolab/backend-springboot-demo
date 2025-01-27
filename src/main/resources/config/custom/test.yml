@@ -1,0 +1,5 @@
+# config/custom/test.yml
+custom: 
+  common: 반갑습니다.
+  message: test
+

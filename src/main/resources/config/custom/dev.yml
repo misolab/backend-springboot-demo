@@ -1,0 +1,3 @@
+# config/custom/dev.yml
+custom: 
+  message: dev

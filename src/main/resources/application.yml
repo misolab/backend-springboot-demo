@@ -2,39 +2,19 @@ server:
   port: 8080
 
 spring:
+  profiles:
+    active: dev
   # Custom Config Import
   config:
     import:
-      - classpath:/config/custom.yml
-      - classpath:/config/custom-${spring.profiles.active:local}.yml
-  # Devtools Config
-  devtools:
-    restart:
-      enabled: false
-  # Database Common Config
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: false
-  # Flyway Config for prod
-  flyway:
-    clean-disabled: true  # 운영환경에서는 clean 비활성화
-
-# Logging Config
-logging:
-  level:
-    com.example.demo: ERROR
-
-# Swagger Config
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-    groups-order: DESC
-    operationsSorter: method
-    disable-swagger-default-url: true
-    display-request-duration: true
-  api-docs:
-    path: /api-docs
-  show-actuator: true
-  default-consumes-media-type: application/json
-  default-produces-media-type: application/json
+      - classpath:/config/custom/common.yml
+      - classpath:/config/custom/${spring.profiles.active}.yml
+      # logging
+      - classpath:/config/logging/common.yml
+      - classpath:/config/logging/${spring.profiles.active}.yml
+      # DB
+      - classpath:/config/db/common.yml
+      - classpath:/config/db/${spring.profiles.active}.yml
+      # swagger
+      - classpath:/config/swagger/common.yml
+      - classpath:/config/swagger/${spring.profiles.active}.yml

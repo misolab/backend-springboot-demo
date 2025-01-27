@@ -1,0 +1,10 @@
+spring:
+  # Database Common Config
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+  # Flyway Config for prod
+  flyway:
+    clean-disabled: true  # 운영환경에서는 clean 비활성화
+    enabled: false

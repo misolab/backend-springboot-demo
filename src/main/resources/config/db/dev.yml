@@ -1,0 +1,5 @@
+# Logging Config
+logging:
+  level:
+    com.example.demo: DEBUG
+      
